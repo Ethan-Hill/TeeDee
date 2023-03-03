@@ -24,6 +24,12 @@ const userSignOut = async () => {
       <Icon class="mr-2" name="carbon:logo-github" />
       Login
     </button>
-    <button @click="userSignOut" v-else>Logout</button>
+    <button
+      class="text-white bg-zinc-600 hover:bg-zinc-800 rounded-lg px-5 py-2.5 text-center inline-flex dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 text-xl font-semibold w-full justify-center items-center transition-colors"
+      @click="userSignOut"
+      v-else
+    >
+      Logout
+    </button>
   </div>
 </template>
