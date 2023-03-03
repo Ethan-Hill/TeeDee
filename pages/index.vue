@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen flex justify-center">
+  <div class="flex justify-center items-center flex-grow">
     <AuthContainer />
   </div>
 </template>

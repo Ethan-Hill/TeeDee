@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTodoFetch } from "~~/composables/Todo/useTodoFetch";
 
-const todos = await useTodoFetch();
+const { todos } = await useTodoFetch();
 </script>
 
 <template>

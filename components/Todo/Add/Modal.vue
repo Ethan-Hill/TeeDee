@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { createTask, open } = defineProps<{
+const { createTask } = defineProps<{
   createTask: (fields: { task: string }) => Promise<globalThis.Ref<null>>;
   open: boolean;
 }>();
@@ -25,7 +25,11 @@ onMounted(() => {
       <Icon name="carbon:close" /><span class="sr-only">Close</span>
     </button>
 
-    <FormKit type="form" @submit="createTask">
+    <FormKit
+      type="form"
+      @submit="createTask"
+      :config="{ validationVisibility: 'submit' }"
+    >
       <FormKit
         type="textarea"
         name="task"
