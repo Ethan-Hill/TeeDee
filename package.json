@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "next-auth": "^4.20.1",
     "nuxt": "^3.2.3",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
@@ -19,8 +20,10 @@
     "@morev/vue-transitions": "^2.3.6",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@nuxtjs/supabase": "^0.3.1",
+    "@sidebase/nuxt-auth": "^0.4.2",
     "@vueuse/core": "^9.13.0",
     "@vueuse/nuxt": "^9.13.0",
+    "mitt": "^3.0.0",
     "nuxt-delay-hydration": "^1.1.4",
     "nuxt-icon": "^0.3.2",
     "nuxt-seo-kit": "^1.3.2",

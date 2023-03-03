@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "@formkit/nuxt",
+    "@sidebase/nuxt-auth",
   ],
 
   extends: ["nuxt-seo-kit"],
@@ -37,5 +38,16 @@ export default defineNuxtConfig({
     families: {
       "Nunito+Sans": true,
     },
+  },
+
+  auth: {
+    enableGlobalAppMiddleware: true,
+    enableSessionRefreshPeriodically: 100000,
+  },
+
+  app: {
+    // global transition
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "layout", mode: "out-in" },
   },
 });

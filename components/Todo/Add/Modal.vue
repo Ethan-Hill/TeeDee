@@ -1,7 +1,14 @@
 <script setup lang="ts">
-const { createTask } = defineProps<{
+const { createTask, open } = defineProps<{
   createTask: (fields: { task: string }) => Promise<globalThis.Ref<null>>;
+  open: boolean;
 }>();
+
+onMounted(() => {
+  const input: HTMLElement | null = document.getElementById("task");
+
+  input?.focus();
+});
 </script>
 
 <template>

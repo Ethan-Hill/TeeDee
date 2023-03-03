@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useTodoDelete } from "~~/composables/Todo/useTodoDelete";
+
 import { Todo } from "~~/types/todo.js";
 
 const { todo } = defineProps<{ todo: Todo }>();
