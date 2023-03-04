@@ -22,9 +22,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
-      siteName: "Awesome Site",
-      siteDescription: "Welcome to my awesome site!",
+      siteName: "TeeDee",
+      siteDescription: "A task manager which uses cutting edge technology",
       language: "en",
+      titleSeparator: "|",
     },
   },
   postcss: {
@@ -46,8 +47,16 @@ export default defineNuxtConfig({
   },
 
   app: {
+    head: {
+      titleTemplate: "%pageTitle %titleSeparator %siteName",
+    },
+
     // global transition
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "layout", mode: "out-in" },
+  },
+
+  linkChecker: {
+    failOn404: true,
   },
 });

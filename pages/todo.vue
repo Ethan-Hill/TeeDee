@@ -8,4 +8,9 @@
 definePageMeta({
   layout: "todo",
 });
+
+useSeoMeta({
+  title: "Todo list",
+  description: "TeeDee todo list page",
+});
 </script>

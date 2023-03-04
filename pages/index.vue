@@ -6,4 +6,9 @@
 
 <script setup lang="ts">
 definePageMeta({ auth: false });
+
+useSeoMeta({
+  title: "Home",
+  description: "TeeDee login page",
+});
 </script>
