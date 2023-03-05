@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useTodoComplete } from "~~/composables/Todo/useTodoMakeComplete";
+import { useTodoUncomplete } from "~~/composables/Todo/useTodoMakeUncomplete";
+
 import { Todo } from "~~/types/todo.js";
 
 const { todo } = defineProps<{ todo: Todo }>();

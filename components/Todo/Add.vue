@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useTodoCreate } from "~~/composables/Todo/useTodoCreate";
+
+// const openModal = useEvent("modalOpen");
+
 const open = ref(false);
 const modal = ref(null);
 
@@ -8,7 +12,6 @@ const createTask = async (fields: { task: string }) => {
 
   return createTask;
 };
-
 onClickOutside(modal, () => {
   open.value = false;
 });
@@ -31,6 +34,7 @@ onClickOutside(modal, () => {
           :open="open"
           :create-task="createTask"
           @close-modal="open = false"
+          ref="modal"
         />
       </div>
     </transition-fade>

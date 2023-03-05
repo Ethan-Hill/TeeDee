@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@vueuse/nuxt",
     "@formkit/nuxt",
+    "@sidebase/nuxt-auth",
   ],
 
   extends: ["nuxt-seo-kit"],
@@ -21,9 +22,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
-      siteName: "Awesome Site",
-      siteDescription: "Welcome to my awesome site!",
+      siteName: "TeeDee",
+      siteDescription: "A task manager which uses cutting edge technology",
       language: "en",
+      titleSeparator: "|",
     },
   },
   postcss: {
@@ -37,5 +39,24 @@ export default defineNuxtConfig({
     families: {
       "Nunito+Sans": true,
     },
+  },
+
+  auth: {
+    enableGlobalAppMiddleware: true,
+    enableSessionRefreshPeriodically: 100000,
+  },
+
+  app: {
+    head: {
+      titleTemplate: "%pageTitle %titleSeparator %siteName",
+    },
+
+    // global transition
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "layout", mode: "out-in" },
+  },
+
+  linkChecker: {
+    failOn404: true,
   },
 });

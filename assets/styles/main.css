@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: rgb(39 39 42);
+}
+
+/* Removes the scrollbar from flashing on page chaneg */
+
+body:has(.layout-enter-from),
+body:has(.layout-leave-to),
+body:has(.layout-enter-active),
+body:has(.layout-leave-active) {
+  overflow-y: hidden;
+}
+
+body:has(.page-enter-active),
+body:has(.page-leave-active),
+body:has(.page-enter-from),
+body:has(.page-leave-to) {
+  overflow-y: hidden;
+}
+
+.page-enter-active {
+  transition: all 0.1s ease-out;
+  overflow-y: hidden;
+}
+.page-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.page-enter-from,
+.page-leave-to {
+  transform: translateY(20px);
+  overflow-y: hidden;
+  opacity: 0;
+}
+
+.layout-enter-active {
+  transition: all 0.1s ease-out;
+}
+.layout-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.layout-enter-from,
+.layout-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+}

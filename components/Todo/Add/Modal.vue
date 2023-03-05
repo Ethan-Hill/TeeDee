@@ -1,7 +1,14 @@
 <script setup lang="ts">
 const { createTask } = defineProps<{
   createTask: (fields: { task: string }) => Promise<globalThis.Ref<null>>;
+  open: boolean;
 }>();
+
+onMounted(() => {
+  const input: HTMLElement | null = document.getElementById("task");
+
+  input?.focus();
+});
 </script>
 
 <template>
@@ -18,7 +25,11 @@ const { createTask } = defineProps<{
       <Icon name="carbon:close" /><span class="sr-only">Close</span>
     </button>
 
-    <FormKit type="form" @submit="createTask">
+    <FormKit
+      type="form"
+      @submit="createTask"
+      :config="{ validationVisibility: 'submit' }"
+    >
       <FormKit
         type="textarea"
         name="task"
