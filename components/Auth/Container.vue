@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { signIn, signOut, status } = useSession();
+const { signIn, signOut, status, data } = useSession();
 
 const userSignIn = async () => {
   await signIn("github");
@@ -14,7 +14,7 @@ const userSignOut = async () => {
   <div
     class="sm:rounded-xl p-6 hover:ring-0 shadow-none bg-zinc-900 h-full lg:w-1/4 sm:w-3/4 w-11/12 relative"
   >
-    <div v-if="status == 'unauthenticated'">
+    <div v-if="status == 'unauthenticated' || data?.user">
       <h2 class="mb-10 font-black text-xl text-center">Login with Github</h2>
 
       <button
