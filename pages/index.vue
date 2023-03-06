@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { useTodoFetch } from "~~/composables/Todo/useTodoFetch";
+import { useTodoFetchActive } from "~~/composables/Todo/useTodoFetchActive";
+import { useTodoFetchCompleted } from "~~/composables/Todo/useTodoFetchCompleted";
 
 const isList = ref(false);
 
 const toggleView = useToggle(isList);
 
-const { todos } = await useTodoFetch();
+const { completeTodos } = await useTodoFetchCompleted();
+const { activeTodos } = await useTodoFetchActive();
+
+let todos = computed(() => {
+  let todos = { completeTodos, activeTodos };
+  return todos;
+});
 
 definePageMeta({
   layout: "todo",
@@ -33,19 +40,13 @@ useSeoMeta({
       <div class="mb-5">
         <h3 class="mb-5 font-black text-lg uppercase">To Do</h3>
 
-        <TodoList
-          :is-list="isList"
-          :todos="todos?.filter((item) => !item.is_complete)"
-        />
+        <TodoList :is-list="isList" :todos="todos.activeTodos.value" />
       </div>
 
       <div>
         <h3 class="mb-5 font-black text-lg uppercase">Completed</h3>
 
-        <TodoList
-          :is-list="isList"
-          :todos="todos?.filter((item) => item.is_complete)"
-        />
+        <TodoList :is-list="isList" :todos="todos.completeTodos.value" />
       </div>
     </div>
   </div>

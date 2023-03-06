@@ -8,7 +8,6 @@ let realtimeChannel: RealtimeChannel;
 
 onMounted(async () => {
   realtimeChannel = await useTodoRefresh();
-  console.log(realtimeChannel);
 });
 
 onUnmounted(async () => {
