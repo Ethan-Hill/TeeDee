@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useTodoCreate } from "~~/composables/Todo/useTodoCreate";
 
-// const openModal = useEvent("modalOpen");
-
 const open = ref(false);
 const modal = ref(null);
 
@@ -19,7 +17,7 @@ onClickOutside(modal, () => {
 
 <template>
   <button
-    class="flex justify-center items-center p-2 text-green-400 bg-zinc-600 hover:bg-zinc-800 rounded-lg transition-colors absolute top-5 right-5"
+    class="flex justify-center items-center p-2 text-green-400 bg-zinc-600 hover:bg-zinc-800 rounded-lg transition-colors"
     @click="open = true"
   >
     <Icon name="carbon:add" /><span class="sr-only">Create task</span>

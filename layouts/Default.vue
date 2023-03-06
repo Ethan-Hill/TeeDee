@@ -16,7 +16,9 @@ onUnmounted(async () => {
 </script>
 
 <template>
-  <div class="bg-zinc-800 min-h-screen text-white flex flex-col">
+  <div
+    class="bg-zinc-800 min-h-screen text-white flex justify-center items-center"
+  >
     <SeoKit />
     <NuxtPage />
   </div>
