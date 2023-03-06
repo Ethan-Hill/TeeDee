@@ -1,8 +1,10 @@
 <script setup lang="ts">
-const { todos, isList } = defineProps<{ todos: any; isList: boolean }>();
+const props = defineProps<{ todos: any; isList: boolean }>();
 
 // Alphabetical Todos
-const sortedTodos = todos.sort((a, b) => a.task.localeCompare(b.task));
+const sortedTodos = computed(() => {
+  return [...props.todos].sort((a, b) => a.task.localeCompare(b.task));
+});
 </script>
 
 <template>
@@ -11,7 +13,7 @@ const sortedTodos = todos.sort((a, b) => a.task.localeCompare(b.task));
     group
     class="flex flex-col gap-3"
     tag="ul"
-    v-if="isList"
+    v-if="props.isList"
   >
     <TodoListItem :todo="item" v-for="item in sortedTodos" />
   </transition-fade>

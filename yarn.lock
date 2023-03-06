@@ -1350,10 +1350,10 @@
     fflate "^0.7.3"
     string.prototype.codepointat "^0.2.1"
 
-"@sidebase/nuxt-auth@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.4.2.tgz#348bb2e233faeb67b080f80f577f768b73a5c66f"
-  integrity sha512-lsHKIOukfxFOWF54/h0I2HujYoEQzGHWpHWb9yI84R7UPEvpONWAWoQ1ozWXnf1MDXQobsrJ5iTB22fI/xmxoQ==
+"@sidebase/nuxt-auth@0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.4.3.tgz#7854f303001565ad114e5b1c3c8266b1ffe8fa96"
+  integrity sha512-j2YGxErbTlCY+wC8XqKqEKaQC/ULHU8qiGrvyF01K8rnOVIBbR01XJtzkZUgsHaQbMIWeZXe09mnX5J2SbuP3A==
   dependencies:
     "@nuxt/kit" "^3.1.2"
     defu "^6.1.1"
