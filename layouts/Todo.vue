@@ -8,22 +8,12 @@ let realtimeChannel: RealtimeChannel;
 
 onMounted(async () => {
   realtimeChannel = await useTodoRefresh();
+  console.log(realtimeChannel);
 });
 
 onUnmounted(async () => {
   await useTodoRemoveChannel(realtimeChannel);
 });
-
-// useSchemaOrg([
-//   definePerson({
-//     name: "Ethan Hill",
-//     image: "/me.jpeg",
-//     sameAs: ["https://github.com/ethan-hill"],
-//   }),
-//   defineWebPage({
-
-//   }),
-// ]);
 </script>
 
 <template>

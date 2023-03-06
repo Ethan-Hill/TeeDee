@@ -2,7 +2,7 @@
 import { useTodoComplete } from "~~/composables/Todo/useTodoMakeComplete";
 import { useTodoUncomplete } from "~~/composables/Todo/useTodoMakeUncomplete";
 
-import { Todo } from "~~/types/todo.js";
+import { Todo } from "~~/types/todos.jss";
 
 const { todo } = defineProps<{ todo: Todo }>();
 
