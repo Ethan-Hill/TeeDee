@@ -27,7 +27,7 @@ useSeoMeta({
 <template>
   <div class="flex justify-center items-center min-h-full flex-grow my-4">
     <div
-      class="sm:rounded-xl p-6 hover:ring-0 shadow-none bg-zinc-900 h-full lg:w-3/4 w-11/12 relative"
+      class="sm:rounded-xl p-6 hover:ring-0 shadow-none bg-zinc-900 h-full relative container"
     >
       <h2 class="mb-10 font-black text-xl uppercase text-center">Todo list</h2>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Todo } from "~~/types/todos.jss";
+import { Todo } from "~~/types/todo";
 
 const { todo } = defineProps<{ todo: Todo }>();
 </script>
