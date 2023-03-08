@@ -2,7 +2,7 @@
 import { useTodoFetchActive } from "~~/composables/Todo/useTodoFetchActive";
 import { useTodoFetchCompleted } from "~~/composables/Todo/useTodoFetchCompleted";
 
-const isList = ref(false);
+const isList = ref(true);
 
 const toggleView = useToggle(isList);
 

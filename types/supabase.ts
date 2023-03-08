@@ -11,18 +11,21 @@ export interface Database {
     Tables: {
       todos: {
         Row: {
+          active_index: number
           id: number
           inserted_at: string
           is_complete: boolean | null
           task: string | null
         }
         Insert: {
+          active_index?: number
           id?: number
           inserted_at?: string
           is_complete?: boolean | null
           task?: string | null
         }
         Update: {
+          active_index?: number
           id?: number
           inserted_at?: string
           is_complete?: boolean | null
