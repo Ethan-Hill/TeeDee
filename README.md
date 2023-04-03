@@ -1,48 +1,60 @@
-# Nuxt 3 Minimal Starter
+TeeDee
+========
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A simple todo app built with Nuxt 3 and styled with TailwindCSS. Users can log in using their GitHub account and create, complete, and remove tasks. All tasks are stored in a Supabase database.
 
-## Setup
+Features
+--------
 
-Make sure to install the dependencies:
+*   User authentication via GitHub
+*   Create new tasks
+*   Mark tasks as complete
+*   Delete tasks
+*   All tasks stored in a Supabase database
 
-```bash
-# yarn
-yarn install
+Technologies Used
+-----------------
 
-# npm
-npm install
+*   Nuxt 3
+*   TailwindCSS
+*   GitHub OAuth
+*   Supabase
 
-# pnpm
-pnpm install
+Installation
+------------
+
+1.  Clone the repository: `git clone https://github.com/ethan-hill/TeeDee.git`
+2.  Navigate to the project directory: `cd TeeDee`
+3.  Install dependencies: `npm install`
+4.  Create a `.env` file and add your GitHub client ID and secret:
+
+
+```
+GITHUB_CLIENT_ID=your-client-id
+GITHUB_CLIENT_SECRET=your-client-secret
+AUTH_SECRET=secret-here
+AUTH_ORIGIN=http://localhost:3000
+SUPABASE_KEY=supabase-key
+SUPABASE_URL=supabase-url
 ```
 
-## Development Server
+5.  Start the development server: `npm run dev`
 
-Start the development server on http://localhost:3000
+Usage
+-----
 
-```bash
-npm run dev
-```
+1.  Navigate to `localhost:3000` in your browser
+2.  Click the "Log in with GitHub" button
+3.  Create a new task by clicking the + and then typing in the input field and pressing enter
+4.  Mark a task as complete by clicking the checkbox next to it
+5.  Delete a task by clicking the bin button next to it
 
-## Production
+Contributing
+------------
 
-Build the application for production:
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-```bash
-npm run build
-```
+License
+-------
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Generate types for DB
-
-```bash
-npx supabase gen types typescript --project-id "njkvrdvmucqaonvopzld" --schema public > types/supabase.ts
-```
+[MIT](https://choosealicense.com/licenses/mit/)
